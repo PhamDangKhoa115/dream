@@ -139,4 +139,4 @@ It enhanced my understanding of system monitoring and gave me a clearer perspect
 
 ## Event Photos
 
-![datadogpic](Datadog.jpg)
+![datadogpic](/Datadog.jpg)

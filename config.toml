@@ -1,6 +1,6 @@
 baseURL = "https://phamdangkhoa115.github.io/dream/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 theme = "hugo-theme-learn"
