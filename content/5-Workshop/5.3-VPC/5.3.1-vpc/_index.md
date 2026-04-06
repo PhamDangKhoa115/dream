@@ -18,7 +18,7 @@ All resources in this section must be created in **ap-southeast-1 (Singapore)**.
 
 Navigate to **VPC** in the AWS Console. In the left sidebar click **Your VPCs**, then click **Create VPC**.
 
-![Create VPC](/images/4-Workshop/VPC/B1_Create_VPC.png)
+![Create VPC](/images/5-Workshop/VPC/B1_Create_VPC.png)
 
 ---
 
@@ -32,7 +32,7 @@ Fill in the VPC settings as shown:
 
 Click **Create VPC**.
 
-![Configure VPC](/images/4-Workshop/VPC/B2_Configure_VPC.png)
+![Configure VPC](/images/5-Workshop/VPC/B2_Configure_VPC.png)
 
 ---
 
@@ -42,7 +42,7 @@ In the left sidebar click **Subnets**, then click **Create subnet**. Select the 
 
 You will create **two subnets** — one public (for the ALB) and one private (for EC2):
 
-![Create Subnet](/images/4-Workshop/VPC/B3_Create_Subnet.png)
+![Create Subnet](/images/5-Workshop/VPC/B3_Create_Subnet.png)
 
 ---
 
@@ -64,7 +64,7 @@ Configure the subnets as follows:
 
 Click **Create subnet**.
 
-![Configure Subnets](/images/4-Workshop/VPC/B4_Configure_Subnet.png)
+![Configure Subnets](/images/5-Workshop/VPC/B4_Configure_Subnet.png)
 
 ---
 
@@ -72,7 +72,7 @@ Click **Create subnet**.
 
 In the left sidebar click **Internet Gateways**, then click **Create internet gateway**.
 
-![Internet Gateway Menu](/images/4-Workshop/VPC/B5_Create_IGW.png)
+![Internet Gateway Menu](/images/5-Workshop/VPC/B5_Create_IGW.png)
 
 ---
 
@@ -82,7 +82,7 @@ In the left sidebar click **Internet Gateways**, then click **Create internet ga
 
 Click **Create internet gateway**.
 
-![Create IGW](/images/4-Workshop/VPC/B6_Create_IGW.png)
+![Create IGW](/images/5-Workshop/VPC/B6_Create_IGW.png)
 
 ---
 
@@ -90,7 +90,7 @@ Click **Create internet gateway**.
 
 After creation, select the new IGW and click **Actions → Attach to VPC**. Select `voice-summarizer-vpc` and confirm.
 
-![Attach IGW to VPC](/images/4-Workshop/VPC/B7_Attach_IGW_VPC.png)
+![Attach IGW to VPC](/images/5-Workshop/VPC/B7_Attach_IGW_VPC.png)
 
 ---
 
@@ -107,7 +107,7 @@ In the left sidebar click **NAT Gateways**, then click **Create NAT gateway**.
 ⚠️ The NAT Gateway is the largest cost driver in this workshop (~$43/month). Remember to delete it during cleanup when the workshop is complete.
 {{% /notice %}}
 
-![Create NAT Gateway](/images/4-Workshop/VPC/B8_Create_NAT.png)
+![Create NAT Gateway](/images/5-Workshop/VPC/B8_Create_NAT.png)
 
 ---
 
@@ -120,7 +120,7 @@ In the left sidebar click **Route Tables**, then click **Create route table**.
 
 Click **Create route table**.
 
-![Create Private Route](/images/4-Workshop/VPC/B9_Create_Private_Route.png)
+![Create Private Route](/images/5-Workshop/VPC/B9_Create_Private_Route.png)
 
 ---
 
@@ -128,7 +128,7 @@ Click **Create route table**.
 
 Verify the route table has been created and is associated with the correct VPC.
 
-![Private Route Table Created](/images/4-Workshop/VPC/B10_Create_Private_RTB.png)
+![Private Route Table Created](/images/5-Workshop/VPC/B10_Create_Private_RTB.png)
 
 ---
 
@@ -143,7 +143,7 @@ Add a new route:
 
 Click **Save changes**. Then go to **Subnet associations** and associate this route table with `voice-summarizer-private-subnet`.
 
-![Edit Routes](/images/4-Workshop/VPC/B11_Edit_RTB.png)
+![Edit Routes](/images/5-Workshop/VPC/B11_Edit_RTB.png)
 
 ---
 
@@ -170,7 +170,7 @@ Create **two endpoints** (repeat for each):
 - **VPC**: `voice-summarizer-vpc`
 - **Route tables**: Select `voice-summarizer-private-rt`
 
-![Create Gateway Endpoints](/images/4-Workshop/VPC/B12_Create_Endpoint_DynamoDB_S3.png)
+![Create Gateway Endpoints](/images/5-Workshop/VPC/B12_Create_Endpoint_DynamoDB_S3.png)
 
 ---
 
@@ -193,7 +193,7 @@ In the left sidebar click **Security Groups**, then click **Create security grou
 
 Click **Create security group**.
 
-![Create Security Group](/images/4-Workshop/VPC/B13_Create_SG.png)
+![Create Security Group](/images/5-Workshop/VPC/B13_Create_SG.png)
 
 ---
 
@@ -203,7 +203,7 @@ If you are routing LLM calls to AWS Bedrock, add a route in the private route ta
 
 Navigate back to **Route Tables → voice-summarizer-private-rt → Routes → Edit routes** and confirm the NAT Gateway route `0.0.0.0/0` is present and active.
 
-![Bedrock NAT Route](/images/4-Workshop/VPC/B14_Add_Route_LLM_API.png)
+![Bedrock NAT Route](/images/5-Workshop/VPC/B14_Add_Route_LLM_API.png)
 
 ---
 
@@ -211,7 +211,7 @@ Navigate back to **Route Tables → voice-summarizer-private-rt → Routes → E
 
 Confirm the routing configuration is complete: the private subnet route table has `0.0.0.0/0 → NAT Gateway` for internet-bound LLM API calls, and the Gateway Endpoints handle S3 and DynamoDB traffic privately.
 
-![Verify Bedrock Config](/images/4-Workshop/VPC/B15_Verify_Connection.png)
+![Verify Bedrock Config](/images/5-Workshop/VPC/B15_Verify_Connection.png)
 
 ---
 
@@ -219,15 +219,10 @@ Confirm the routing configuration is complete: the private subnet route table ha
 
 Navigate to **Subnets**, select `voice-summarizer-public-subnet`, and click **Actions → Edit subnet settings**. Enable **Auto-assign public IPv4 address**. This ensures the ALB (deployed in the next section) can receive public traffic.
 
-![ALB Subnet Setting](/images/4-Workshop/VPC/B16_Assign_PubSubnet_ALB.png)
+![ALB Subnet Setting](/images/5-Workshop/VPC/B16_Assign_PubSubnet_ALB.png)
 
 ---
 
 {{% notice tip %}}
-✅ You have completed the networking setup. Your VPC now has:
-
-- A **public subnet** with internet access via the Internet Gateway (for the ALB)
-- A **private subnet** with outbound-only access via the NAT Gateway (for EC2)
-- **Gateway Endpoints** for private S3 and DynamoDB access
-- A **security group** protecting the EC2 instance
-  {{% /notice %}}
+✅ You have completed the networking setup. Your VPC now has:<br>• A **public subnet** with internet access via the Internet Gateway (for the ALB)<br>• A **private subnet** with outbound-only access via the NAT Gateway (for EC2)<br>• **Gateway Endpoints** for private S3 and DynamoDB access<br>• A **security group** protecting the EC2 instance
+{{% /notice %}}

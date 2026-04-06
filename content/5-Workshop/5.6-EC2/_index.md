@@ -26,7 +26,7 @@ Configure the basics:
 - **AMI**: Ubuntu Server 24.04 LTS (or Amazon Linux 2023)
 - **Instance type**: `t3.xlarge` _(see note below)_
 
-![Launch EC2 Instance](/images/4-Workshop/EC2/B1_Launch_EC2.png)
+![Launch EC2 Instance](/images/5-Workshop/EC2/B1_Launch_EC2.png)
 
 {{% notice info %}}
 **Instance sizing:** The `t3.xlarge` (4 vCPU, 16 GB RAM) is recommended for running the Sentence Transformer embedding model alongside FastAPI and Celery without memory pressure. A `t3.medium` (2 vCPU, 4 GB RAM) may work for light testing but is likely to OOM when loading the embedding model.
@@ -38,7 +38,7 @@ Configure the basics:
 
 Select **t3.xlarge** from the instance type list.
 
-![Choose xlarge](/images/4-Workshop/EC2/B2_Choose_Instance_Type.png)
+![Choose xlarge](/images/5-Workshop/EC2/B2_Choose_Instance_Type.png)
 
 ---
 
@@ -61,7 +61,7 @@ Scroll down to configure the remaining settings:
 
 - Root volume: **30 GB gp3** (increase to 50 GB if you plan to store large model weights locally)
 
-![Configure EC2](/images/4-Workshop/EC2/B3_EC2_Configuration.png)
+![Configure EC2](/images/5-Workshop/EC2/B3_EC2_Configuration.png)
 
 Click **Launch instance**.
 

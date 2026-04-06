@@ -20,7 +20,7 @@ By the end of this section you will have:
 
 Navigate to **Amazon Cognito** in the AWS Console. Click **User pools** in the left sidebar, then click **Create user pool**.
 
-![Open Cognito User Pools](/images/4-Workshop/Cognito/B1_Navigate_Cognito_Userpool.png)
+![Open Cognito User Pools](/images/5-Workshop/Cognito/B1_Navigate_Cognito_Userpool.png)
 
 ---
 
@@ -28,7 +28,7 @@ Navigate to **Amazon Cognito** in the AWS Console. Click **User pools** in the l
 
 On the first screen, select **Single-page application (SPA)** as the application type. This configures the app client without a client secret, which is required for browser-based authentication flows.
 
-![Choose SPA](/images/4-Workshop/Cognito/B2_Choose_SPA.png)
+![Choose SPA](/images/5-Workshop/Cognito/B2_Choose_SPA.png)
 
 ---
 
@@ -42,7 +42,7 @@ Configure the sign-in and registration options:
 - **MFA**: Optional (leave off for the workshop)
 - **User account recovery**: Email
 
-![Configure Email and Self-Registration](/images/4-Workshop/Cognito/B3_Configure_Auth.png)
+![Configure Email and Self-Registration](/images/5-Workshop/Cognito/B3_Configure_Auth.png)
 
 ---
 
@@ -52,7 +52,7 @@ Review all settings. Scroll down and click **Create user pool**.
 
 - **User pool name**: `voice-summarizer-user-pool`
 
-![Create User Pool](/images/4-Workshop/Cognito/B4_Review_Configuration.png)
+![Create User Pool](/images/5-Workshop/Cognito/B4_Review_Configuration.png)
 
 ---
 
@@ -62,7 +62,7 @@ After creation, click on `voice-summarizer-user-pool` to open its detail page. A
 
 You will paste this value into the frontend config file in Step 7.
 
-![Copy User Pool ID](/images/4-Workshop/Cognito/B5_Copy_Created_UPID.png)
+![Copy User Pool ID](/images/5-Workshop/Cognito/B5_Copy_Created_UPID.png)
 
 ---
 
@@ -72,7 +72,7 @@ In the left sidebar (inside the User Pool detail view) click **App clients**. Cl
 
 You will paste this value alongside the Pool ID in the frontend config file.
 
-![Copy Client ID](/images/4-Workshop/Cognito/B6_Copy_ClientID.png)
+![Copy Client ID](/images/5-Workshop/Cognito/B6_Copy_ClientID.png)
 
 ---
 

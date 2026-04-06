@@ -24,7 +24,7 @@ Navigate to **Lambda** in the AWS Console. Click **Create function**.
 
 Click **Create function**.
 
-![Create Lambda Function](/images/4-Workshop/Lambda/B1_Create_Lambda_audio2text.png)
+![Create Lambda Function](/images/5-Workshop/Lambda/B1_Create_Lambda_audio2text.png)
 
 ---
 
@@ -32,7 +32,7 @@ Click **Create function**.
 
 After creation, click on the `audio2text` function to open its detail page. Scroll to **Code source** and replace the default handler with the code below.
 
-![Open audio2text Function](/images/4-Workshop/Lambda/B2_Paste_Code.png)
+![Open audio2text Function](/images/5-Workshop/Lambda/B2_Paste_Code.png)
 
 Paste the following code into `lambda_function.py`:
 
@@ -180,7 +180,7 @@ Configure the trigger:
 - **Prefix**: `raw_audio/`
 - Acknowledge the recursive invocation warning and click **Add**
 
-![Add S3 Trigger](/images/4-Workshop/Lambda/B3_Add_Trigger.png)
+![Add S3 Trigger](/images/5-Workshop/Lambda/B3_Add_Trigger.png)
 
 ---
 

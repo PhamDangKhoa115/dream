@@ -23,7 +23,7 @@ Once complete, users will reach the platform via your custom domain (e.g. `voice
 
 Navigate to **Route 53** in the AWS Console. In the left sidebar click **Hosted zones**, then click **Create hosted zone**.
 
-![Go to Hosted Zones and Create](/images/4-Workshop/Route53/B1_Goto_Route53.png)
+![Go to Hosted Zones and Create](/images/5-Workshop/Route53/B1_Goto_Route53.png)
 
 ---
 
@@ -37,7 +37,7 @@ Fill in the Hosted Zone settings:
 
 Click **Create hosted zone**.
 
-![Enter Domain Name — Public Hosted Zone](/images/4-Workshop/Route53/B2_Enter_Domain.png)
+![Enter Domain Name — Public Hosted Zone](/images/5-Workshop/Route53/B2_Enter_Domain.png)
 
 After creation, Route 53 automatically generates two records inside the Hosted Zone:
 
@@ -59,7 +59,7 @@ ns-444.awsdns-88.co.uk.
 
 You will paste these into your domain registrar's nameserver settings in the next step.
 
-![Copy NS Values](/images/4-Workshop/Route53/B3_Copy_Value_Route.png)
+![Copy NS Values](/images/5-Workshop/Route53/B3_Copy_Value_Route.png)
 
 ---
 
@@ -73,7 +73,7 @@ Replace the existing nameservers with the four Route 53 NS values you copied in 
 ⚠️ DNS propagation after changing nameservers can take anywhere from a few minutes to 48 hours, depending on your registrar's TTL settings. You can monitor propagation using tools like [dnschecker.org](https://dnschecker.org).
 {{% /notice %}}
 
-![Add NS Records at Registrar](/images/4-Workshop/Route53/B4_Add_NS_Record_To_Ur_Domain.png)
+![Add NS Records at Registrar](/images/5-Workshop/Route53/B4_Add_NS_Record_To_Ur_Domain.png)
 
 ---
 
@@ -92,7 +92,7 @@ Configure the record as follows:
 
 Click **Create records**.
 
-![Create Alias A Record to ALB](/images/4-Workshop/Route53/B5_Create_Alias_Pointing_To_ALB.png)
+![Create Alias A Record to ALB](/images/5-Workshop/Route53/B5_Create_Alias_Pointing_To_ALB.png)
 
 {{% notice info %}}
 **Two records for two endpoints:** If you want to serve both the frontend and the API from the same domain using subdomains, create two alias records:<br>• Apex or `www` subdomain → Amplify App domain (find this in Amplify Console → App settings → Domain management)<br>• `api` subdomain → ALB DNS name<br>For this workshop a single alias record pointing to the ALB is sufficient if the frontend is accessed directly via the Amplify default URL.

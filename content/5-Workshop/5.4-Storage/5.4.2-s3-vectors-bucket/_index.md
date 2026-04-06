@@ -20,7 +20,7 @@ The EC2 backend reads and writes to this bucket directly via the VPC Gateway End
 
 Navigate to **S3** in the AWS Console. Click **Create bucket**.
 
-![Click Create Vectors Bucket](/images/4-Workshop/S3_Vector/B1_Click_Create_Vector_Bucket.png)
+![Click Create Vectors Bucket](/images/5-Workshop/S3_Vector/B1_Click_Create_Vector_Bucket.png)
 
 ---
 
@@ -35,13 +35,10 @@ Note the bucket name — you will need to configure it as an environment variabl
 
 Click **Create bucket**.
 
-![Enter Name and Create](/images/4-Workshop/S3_Vector/B2_Create_Bucket.png)
+![Enter Name and Create](/images/5-Workshop/S3_Vector/B2_Create_Bucket.png)
 
 ---
 
 {{% notice tip %}}
-✅ You now have two S3 buckets configured:
-
-- **Audio & Transcript bucket** (`one4allthing`) with `raw_audio/` and `transcripts/` folders
-- **Vectors bucket** for storing the semantic index
-  {{% /notice %}}
+✅ You now have two S3 buckets configured: <br>- **Audio & Transcript bucket** (`one4allthing`) with `raw_audio/` and `transcripts/` folders <br>- **Vectors bucket** for storing the semantic index
+{{% /notice %}}

@@ -24,7 +24,7 @@ These two tables share the same partition key (`raw_id`) and are created with id
 
 Navigate to **DynamoDB** in the AWS Console. Click **Create table**.
 
-![Click Create Table](/images/4-Workshop/DynamoDB/B1_Click_Create_Table.png)
+![Click Create Table](/images/5-Workshop/DynamoDB/B1_Click_Create_Table.png)
 
 ---
 
@@ -37,7 +37,7 @@ Fill in the table settings for the first table:
 - **Sort key**: _(leave empty)_
 - **Table settings**: Default settings (On-demand capacity)
 
-![Enter Table Name and Partition Key](/images/4-Workshop/DynamoDB/B2_Configure_VST.png)
+![Enter Table Name and Partition Key](/images/5-Workshop/DynamoDB/B2_Configure_VST.png)
 
 ---
 
@@ -45,7 +45,7 @@ Fill in the table settings for the first table:
 
 Review the settings and click **Create table**. Wait for the status to change to **Active** before proceeding.
 
-![Click Create](/images/4-Workshop/DynamoDB/B3_Create_Table.png)
+![Click Create](/images/5-Workshop/DynamoDB/B3_Create_Table.png)
 
 ---
 
@@ -58,7 +58,7 @@ Click **Create table** again. Use the same configuration with the new name:
 - **Sort key**: _(leave empty)_
 - **Table settings**: Default settings (On-demand capacity)
 
-![Configure memory_AI Table](/images/4-Workshop/DynamoDB/B4_Configure_MA.png)
+![Configure memory_AI Table](/images/5-Workshop/DynamoDB/B4_Configure_MA.png)
 
 Click **Create table** and wait for **Active** status.
 
@@ -77,7 +77,7 @@ Click **Create table** again. Configure:
 - **Sort key**: `raw_id` — type **String**
 - **Table settings**: Default settings (On-demand capacity)
 
-![Configure User Table](/images/4-Workshop/DynamoDB/B5_Configure_User.png)
+![Configure User Table](/images/5-Workshop/DynamoDB/B5_Configure_User.png)
 
 ---
 
@@ -85,20 +85,10 @@ Click **Create table** again. Configure:
 
 In the DynamoDB console, confirm all three tables are listed with **Active** status:
 
-![Verify All Tables](/images/4-Workshop/DynamoDB/B6_Final_Check.png)
+![Verify All Tables](/images/5-Workshop/DynamoDB/B6_Final_Check.png)
 
 ---
 
 {{% notice tip %}}
-✅ All three DynamoDB tables are ready:
-
-- **voice_status_table** — tracks recording pipeline state (status, progress, stage)
-- **memory_AI** — stores AI chat histories and conversation memory
-- **User** — stores user records created on Cognito sign-up
-
-Set the corresponding environment variables on the EC2 instance:
-
-- `STATUS_TABLE=voice_status_table`
-- `MEMORY_TABLE=memory_AI`
-- `USERS_TABLE` in the Lambda code maps to `User`
-  {{% /notice %}}
+✅ All three DynamoDB tables are ready: <br> - **voice_status_table** — tracks recording pipeline state (status, progress, stage) <br> - **memory_AI** — stores AI chat histories and conversation memory <br> - **User** — stores user records created on Cognito sign-up <br> Set the corresponding environment variables on the EC2 instance: <br> - `STATUS_TABLE=voice_status_table` <br> - `MEMORY_TABLE=memory_AI` <br> - `USERS_TABLE` in the Lambda code maps to `User`
+{{% /notice %}}
