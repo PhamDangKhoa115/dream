@@ -27,3 +27,25 @@ Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là
 &emsp;**Địa điểm:** Tầng 26, Bitexco Tower, 02 Hải Triều, Phường Sài Gòn, TP. Hồ Chí Minh
 
 &emsp;**Vai trò:** Người tham gia
+
+### [Event 3](4.3-Event3/)
+
+&emsp;**Tên sự kiện:** Secure Hybrid Access to S3 using VPC Endpoints
+
+&emsp;**Thời gian:** 9:00 sáng, ngày 4 tháng 4
+
+&emsp;**Địa điểm:** Hội trường Academy, Đại học FPT
+
+&emsp;**Vai trò:** Người tham gia
+
+---
+
+### [Event 4](4.4-Event4/)
+
+&emsp;**Tên sự kiện:** AWS Networking, Security & IAM Workshop
+
+&emsp;**Thời gian:** 9:00 sáng, ngày 11 tháng 4
+
+&emsp;**Địa điểm:** Hội trường Academy, Đại học FPT
+
+&emsp;**Vai trò:** Người tham gia

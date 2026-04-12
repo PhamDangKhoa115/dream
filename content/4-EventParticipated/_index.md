@@ -31,3 +31,23 @@ During my internship, I participated in two events. Each one was a memorable exp
 &emsp; **Role:** Attendee
 
 ### [Event 3](4.3-Event3/)
+
+&emsp;**Event Name:** Secure Hybrid Access to S3 using VPC Endpoints
+
+&emsp;**Date & Time:** 9:00 a.m, April 4th
+
+&emsp;**Location:** Academy Hall, FPT University
+
+&emsp;**Role:** Attendee
+
+---
+
+### [Event 4](4.4-Event4/)
+
+&emsp;**Event Name:** AWS Networking, Security & IAM Workshop
+
+&emsp;**Date & Time:** 9:00 a.m, April 11th
+
+&emsp;**Location:** Academy Hall, FPT University
+
+&emsp;**Role:** Attendee
